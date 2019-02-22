@@ -1,5 +1,10 @@
+# Abbey Johnson
+# Febrary 22, 2019
+
+# import numpy module
 import numpy as np
 
+# mesh subroutine
 # mesh of M uniform control volumes in the interval [a, b] up to time t_end
 def MESH(x, a, dx, Mp1, b):
     # left boundary of mesh

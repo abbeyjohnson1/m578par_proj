@@ -1,22 +1,28 @@
 # Abbey Johnson
+# February 22, 2019
 
+# import math and mumpy modules
 import math
 import numpy as np
+
+# import subroutines from other files
 from z_io import INPUT, OUTPUT
 from z_setup import MESH, INIT
 from z_update import FLUX, PDE
 
+# check to see if Lab $ is being run directly
 if __name__ == "__main__":
     print ("Lab4 is being run directly")
 else:
     print ("Lab4 is being imported")
 
-filename = 'lab4_out.txt'
+# create output file
+filename = 'data_out.txt'
 
 # BEGIN TIME-STEPPING SCHEME
 
-# input
-MM, tend, factor, dtout, D, a, b = INPUT('./Lab4Init.txt')
+# input parameter valus from file
+MM, tend, factor, dtout, D, a, b = INPUT('./Init.txt')
 
 dx = np.float64(1.0/MM)
 

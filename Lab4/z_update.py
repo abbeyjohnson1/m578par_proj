@@ -1,3 +1,7 @@
+# Abbey Johnson
+# February 22, 2019
+
+# import numpy and math modules
 import numpy as np
 import math
 
