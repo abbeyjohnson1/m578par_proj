@@ -1,25 +1,54 @@
 # Abbey Johnson
 # February 22, 2019
 
-# import math and mumpy modules
+# MASTER
+
+# import math module
 import math
+
+# import numpy module
 import numpy as np
 
+# import subrouting from messaging.py
+from messaging import RECV_output_MPI
+
+# import MPI
+from mpi4py import MPI
+
 # import subroutines from other files
-from z_io import INPUT, OUTPUT
-from z_setup import MESH, INIT
-from z_update import FLUX, PDE
+# from z_io import INPUT, OUTPUT
+# from z_setup import MESH, INIT
+# from z_update import FLUX, PDE
 
-# check to see if Lab $ is being run directly
+# this defines the default communicator, which contains all processes
+comm = MPI.COMM_WORLD
+
+# nPROC = number of processes = nWRs+1 to use in this run
+nPROC = comm.Get_size()
+
+# returns the process ID of current process; a number between 0 and nPROC-1, myID = rank of a process
+myID = comm.Get_rank()
+
+# master rank
+mster = 0
+
+# number of workers
+nWRs = nPROC - 1
+
+# check to see if 1Dpar code is being run directly
 if __name__ == "__main__":
-    print ("Lab4 is being run directly")
-else:
-    print ("Lab4 is being imported")
+    print ("Lab4 is being r")
+ else:
+    print ("1Dpar code is NOT being run directly")
 
-# create output file
-filename = 'data_out.txt'
+print("string {} {}" .format(Nwrs, mid))
+
+# THIS IS IN THE WRONG FILE
 
 # BEGIN TIME-STEPPING SCHEME
+
+# create output file
+filename = '1Dpar_data_out.txt'
 
 # input parameter valus from file
 MM, tend, factor, dtout, D, a, b = INPUT('./Init.txt')
